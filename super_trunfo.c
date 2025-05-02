@@ -18,10 +18,12 @@ int pts2;
 float area2, pib2;
 unsigned long int populacao2; 
 
-printf("Olá, este programa foi desenvolvido no estilo de um jogo, vai funcionar da seguinte forma: Coletaremos alguns dados que serão inseridas em duas cartas dentro do jogo.\n\n");
+printf("\n\n");
+printf("Olá, este programa foi desenvolvido no estilo de um jogo, vai funcionar da seguinte forma:\n"); 
+printf("Coletaremos alguns dados que serão inseridas em duas cartas dentro do jogo.\n\n");	
 printf("São 2 cartas, sendo que cada uma delas vai conter dados diferentes que serão coletados com suas respostas.\n\n ");
 printf("Vamos lá !\n\n");
-printf(" Começaremos pelo primeiro número (0), logo vamos para a carta de número 0!\n");
+printf("Começaremos pelo primeiro número (0), logo vamos para a carta de número 0!\n\n");
 
 printf("Digite aqui uma letra de A ao H (Representando um dos 8 estados): \n");
 scanf("%s", Estado);
