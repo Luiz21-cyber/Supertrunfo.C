@@ -34,7 +34,7 @@ nome[strcspn(nome, "\n")] = '\0';
 printf("Numero de habitantes da mesma (Sua população): \n");
 scanf("%d", &populacao);
 
-printf("Sua área em Km quadrados: \n");
+printf("Sua área em Km²: \n");
 scanf("%f", &area);
 
 printf("Seu produto interno bruto (PIB): \n"); 
@@ -50,12 +50,12 @@ printf("Carta 1:\n");
 printf("Estado: %s \n", Estado);
 printf("Código: %s  \n", cdg);
 printf("Nome da cidade: %s \n", nome);
-printf("População: %d   \n", populacao);
-printf("Área da cidade : %.1f \n", area);
-printf("PIB: %.1f \n", pib);
+printf("População: %d habitantes  \n", populacao);
+printf("Área da cidade : %.1f Km² \n", area);
+printf("PIB: %.1f Dólares\n", pib);
 printf("Número de pontos turisticos : %d \n", pts);
-printf("Densidade Populacional : %.2f \n", densidadepopulacional);
-printf("PIB Per Capita : %.2f \n", Pibpercapita);
+printf("Densidade Populacional : %.2f hab/km² \n", densidadepopulacional);
+printf("PIB Per Capita : %.2f Dólares \n", Pibpercapita);
 
 
 
@@ -78,7 +78,7 @@ nome2[strcspn(nome2, "\n")] = '\0';
 printf("Número de habitantes (População): \n");
 scanf("%d", &populacao2);
 
-printf("Sua área em Km quadrados: \n");
+printf("Sua área em Km²: \n");
 scanf("%f", &area2);
 
 printf("Seu produto interno bruto (PIB): \n"); 
@@ -94,12 +94,12 @@ printf("Carta 2:\n");
 printf("Estado: %s \n", Estado2);
 printf("Código: %s  \n", cdg2);
 printf("Nome da cidade: %s \n", nome2);
-printf("População: %d   \n", populacao2);
-printf("Área da cidade : %.1f \n", area2);
-printf("PIB: %.1f \n", pib2);
+printf("População: %d Habitantes  \n", populacao2);
+printf("Área da cidade : %.1f Km² \n", area2);
+printf("PIB: %.1f Dólares \n", pib2);
 printf("Quantidade de pontos turisticos : %d \n", pts2);
-printf("Densidade Populacional : %.2f \n", densidadepopulacional2);
-printf("PIB Per Capita : %.2f \n", Pibpercapita2);
+printf("Densidade Populacional : %.2f hab/km² \n", densidadepopulacional2);
+printf("PIB Per Capita : %.2f Dólares \n", Pibpercapita2);
 
 printf("Obrigado por participar, este foi o programa, um exemplar apenas com o intuito de coletar dados e reproduzi-los na ordem correta.\n");
 
