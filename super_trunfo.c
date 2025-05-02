@@ -43,6 +43,9 @@ scanf("%f", &pib);
 printf("Número de pontos turísticos possuintes: \n");
 scanf("%d", &pts);
 
+float densidadepopulacional = populacao / area;
+float Pibpercapita = pib / populacao;
+
 printf("Carta 1:\n");
 printf("Estado: %s \n", Estado);
 printf("Código: %s  \n", cdg);
@@ -51,6 +54,8 @@ printf("População: %d   \n", populacao);
 printf("Área da cidade : %.1f \n", area);
 printf("PIB: %.1f \n", pib);
 printf("Número de pontos turisticos : %d \n", pts);
+printf("Densidade Populacional : %.2f \n", densidadepopulacional);
+printf("PIB Per Capita : %.2f \n", Pibpercapita);
 
 
 
@@ -82,6 +87,9 @@ scanf("%f", &pib2);
 printf("Numero de pontos turísticos: \n");
 scanf("%d", &pts2);
 
+float densidadepopulacional2 = populacao2 / area2;
+float Pibpercapita2 = pib2 / populacao2;
+
 printf("Carta 2:\n");
 printf("Estado: %s \n", Estado2);
 printf("Código: %s  \n", cdg2);
@@ -90,6 +98,8 @@ printf("População: %d   \n", populacao2);
 printf("Área da cidade : %.1f \n", area2);
 printf("PIB: %.1f \n", pib2);
 printf("Quantidade de pontos turisticos : %d \n", pts2);
+printf("Densidade Populacional : %.2f \n", densidadepopulacional2);
+printf("PIB Per Capita : %.2f \n", Pibpercapita2);
 
 printf("Obrigado por participar, este foi o programa, um exemplar apenas com o intuito de coletar dados e reproduzi-los na ordem correta.\n");
 
