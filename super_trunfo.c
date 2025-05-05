@@ -6,6 +6,8 @@
 
 int main(int argc, char *argv[]) {
 	
+	// Inserindo as variaveis e seus tipos respectivos de entrada
+	
 char Estado[50], nome[50];
 char cdg[20];
 int pts;
@@ -18,12 +20,15 @@ int pts2;
 float area2, pib2;
 unsigned long int populacao2; 
 
+// Introduzindo o programa com explicações rápidas e precisas sobre o sistema
+
 printf("\n\n");
-printf("Olá, este programa foi desenvolvido no estilo de um jogo, vai funcionar da seguinte forma:\n"); 
-printf("Coletaremos alguns dados que serão inseridas em duas cartas dentro do jogo.\n\n");	
+printf("Olá, este programa foi desenvolvido no estilo de um jogo, vai funcionar da seguinte forma: Coletaremos alguns dados que serão inseridas em duas cartas dentro do jogo.\n\n");
 printf("São 2 cartas, sendo que cada uma delas vai conter dados diferentes que serão coletados com suas respostas.\n\n ");
 printf("Vamos lá !\n\n");
-printf("Começaremos pelo primeiro número (0), logo vamos para a carta de número 0!\n\n");
+printf(" Começaremos pelo primeiro número (0), logo vamos para a carta de número 0!\n");
+
+// Coletando as informações !
 
 printf("Digite aqui uma letra de A ao H (Representando um dos 8 estados): \n");
 scanf("%s", Estado);
@@ -48,9 +53,15 @@ scanf("%f", &pib);
 printf("Número de pontos turísticos possuintes: \n");
 scanf("%d", &pts);
 
+// Aqui definindo os valores do pib per capita, super poder e densidade populacional!
+
 float Pibpercapita = pib / populacao;
 float densidadepopulacional = populacao / area;
 float superpoder = pib + populacao + area + pts + Pibpercapita + 1/densidadepopulacional;
+
+// Mostrando os dados colhidos para verificação !
+
+
 printf("Carta 0:\n\n");
 printf("Estado: %s \n\n", Estado);
 printf("Código: %s  \n\n", cdg);
@@ -67,11 +78,9 @@ printf("SuperPoder da Carta 0 (Soma de todos os valores númericos): (%.2f)\n\n"
 
 
 
-
-
-
-
 printf("Em seguida a carta de número 1: \n ");
+
+// Colhendo dados da outra carta !
 
 printf("Digite aqui uma letra de A ao H (Representando um dos 8 estados): \n");
 scanf("%s", Estado2);
@@ -96,6 +105,8 @@ scanf("%f", &pib2);
 printf("Numero de pontos turísticos: \n");
 scanf("%d", &pts2);
 
+// Aqui definindo os valores do pib per capita, super poder e densidade populacional como feito acima mas agora para a outra carta !
+
 float Pibpercapita2 = pib2 / populacao2;
 float densidadepopulacional2 = populacao2 / area2;
 float superpoder2 = pib2 + populacao2 + area2 + pts2 + Pibpercapita2 + 1/densidadepopulacional2;
@@ -112,7 +123,7 @@ printf("Densidade Populacional: %.2f \n\n", densidadepopulacional2);
 printf("PIB Per Capita: %.2f \n\n", Pibpercapita2);
 printf("SuperPoder agora da carta 1: (%.2f)\n\n ", superpoder2);
 
-
+// Revelando atraves das comparações qual venceu em quais aspectos diferentes !
 
 
 printf("Veremos em seguida a comparação das cartas, qual possui a maior pontuação em cada atributo e qual venceu !\n\n");
@@ -123,6 +134,20 @@ printf("Pontos Turísticos: Carta (%d) Venceu!\n\n", pts < pts2);
 printf("Densidade Populacional : Carta (%d) Venceu!\n\n", densidadepopulacional > densidadepopulacional2);
 printf("PIB Per Capita : Carta (%d) Venceu!\n\n", Pibpercapita < Pibpercapita2);
 printf("Super Poder: Carta (%d) Venceu!\n\n", superpoder < superpoder2);
+
+// Utilizando o if e else para determinar qual venceu, o atributo escolhido foi o PIB, por motivo ecônomico !
+
+printf("Agora utilizaremos o fator determinante PIB para determinarmos qual definitivamente venceu !\n\n");
+printf("PIB da carta 0 : %.1f\n\n", pib);
+printf("PIB da Carta 1 : %.1f\n\n", pib2);
+
+if ( pib > pib2){printf("Carta 0 venceu !\n\n");
+} else { printf("Carta 1 Venceu !\n\n");
+}
+
+
+
+
 printf("Obrigado por participar, este foi o programa, um exemplar apenas com o intuito de coletar dados e reproduzi-los na ordem correta.\n");
 
 	
