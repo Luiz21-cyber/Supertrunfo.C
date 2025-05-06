@@ -36,7 +36,7 @@ scanf("%s", Estado);
 printf("Digite o código da carta, composto pela letra escrita anteriormente adicionando um numero do 01 ao 04: \n");
 scanf("%s", cdg);
 
-printf("Agora o nome de alguma cidade de sua escolha: \n");
+printf("Agora o nome de algum País de sua escolha: \n");
 getchar();
 fgets(nome, sizeof(nome), stdin);
 nome[strcspn(nome, "\n")] = '\0';
@@ -65,9 +65,9 @@ float superpoder = pib + populacao + area + pts + Pibpercapita + 1/densidadepopu
 printf("Carta 0:\n\n");
 printf("Estado: %s \n\n", Estado);
 printf("Código: %s  \n\n", cdg);
-printf("Nome da cidade: %s \n\n", nome);
+printf("Nome do País: %s \n\n", nome);
 printf("População: %d   \n\n", populacao);
-printf("Área da cidade : %.1f \n\n", area);
+printf("Área do País : %.1f \n\n", area);
 printf("PIB: %.1f \n\n", pib);
 printf("Número de pontos turisticos : %d \n\n", pts);
 printf("Densidade Populacional: %.2f \n\n", densidadepopulacional);
@@ -88,7 +88,7 @@ scanf("%s", Estado2);
 printf("Digite o código da carta, composto pela letra escrita anteriormente adicionando um numero do 01 ao 04: \n");
 scanf("%s", cdg2);
 
-printf("Nome da cidade: \n");
+printf("Nome do País: \n");
 getchar();
 fgets(nome2, sizeof(nome2), stdin);
 nome2[strcspn(nome2, "\n")] = '\0';
@@ -114,9 +114,9 @@ float superpoder2 = pib2 + populacao2 + area2 + pts2 + Pibpercapita2 + 1/densida
 printf("Carta 1:\n\n");
 printf("Estado: %s \n\n", Estado2);
 printf("Código: %s  \n\n", cdg2);
-printf("Nome da cidade: %s \n\n", nome2);
+printf("Nome do País: %s \n\n", nome2);
 printf("População: %d   \n\n", populacao2);
-printf("Área da cidade : %.1f \n\n", area2);
+printf("Área do País : %.1f \n\n", area2);
 printf("PIB: %.1f \n\n", pib2);
 printf("Quantidade de pontos turisticos : %d \n\n", pts2);
 printf("Densidade Populacional: %.2f \n\n", densidadepopulacional2);
@@ -135,55 +135,165 @@ printf("Densidade Populacional : Carta (%d) Possui!\n\n", densidadepopulacional 
 printf("PIB Per Capita : Carta (%d) Possui!\n\n", Pibpercapita < Pibpercapita2);
 printf("Super Poder: Carta (%d) Possui!\n\n", superpoder < superpoder2);
 
-// Utilizando o if e else para determinar qual venceu, o atributo escolhido foi o PIB, por motivo ecônomico !
+// Entrando com as váriaveis para as opções
 
-printf("Agora você escolhe qual atributo será o determinante para a vitória.\n\n Lembrando que no caso da densidade populacional é o oposto (ou seja, o menor valor vence ).\n\n");
+printf("Agora você escolherá dois atributos que serão os determinantes para a vitória.\n\n Lembrando que no caso da densidade populacional é o oposto (ou seja, o menor valor vence ).\n\n");
 
-int opcao;
+int opcao, opcao2;
+float somacarta0 = 0, somacarta1 = 0;
 
-printf("Escolha um : \n\n");
+printf("Escolha o primeiro (digite apenas o número da opção escolhida): \n\n");
 printf("1. População\n");
-printf("2. Área da cidade\n");
+printf("2. Área do País\n");
 printf("3. Quantidade de pontos turísticos\n");
 printf("4. Densidade Populacional\n");
 printf("5. PIB Per Capita\n");
 printf("6. Super Poder\n");
 scanf("%d", &opcao);
 
+// Utilizando o switch para dar as opções
+
 switch (opcao) {
 	
 	case 1 : 
 	printf("Opção Escolhida População: \n Carta (%d) Venceu!\n\n", populacao < populacao2);
+	somacarta0 += populacao;
+	somacarta1 += populacao2;
+	
 	break;
 	
 	case 2 :
-	printf("Opção Escolhida: Área da Cidade \n Carta (%d) Venceu!\n\n", area < area2);
+	printf("Opção Escolhida: Área do País \n Carta (%d) Venceu!\n\n", area < area2);
+	somacarta0 += area;
+	somacarta1 += area2;
+	
 	break;
 	
 	case 3 :
 	printf("Opção Escolhida Quantidade de Pontos Turísticos : \n Carta (%d) Venceu!\n\n", pts < pts2);
+	somacarta0 += pts;
+	somacarta1+= pts2;
+	
 	break;
 	
 	case 4: 
 	printf("Opção Escolhida : Densidade Populacional \n Carta (%d) Venceu!\n\n", densidadepopulacional > densidadepopulacional2);
+	somacarta0 += densidadepopulacional;
+	somacarta1 += densidadepopulacional2;
+	
+	
 	break;
 	
 	case 5 :
 	printf("Opção Escolhida : PIB Per Capita \n Carta (%d) Venceu!\n\n", Pibpercapita < Pibpercapita2);
+	somacarta0 += Pibpercapita;
+	somacarta1 += Pibpercapita2;
+	
 	break;
 	
 	case 6 :
 	printf("Opção Escolhida : Super Poder\n Carta (%d) Venceu!\n\n", superpoder < superpoder2);
+	somacarta0 += superpoder;
+	somacarta1 += superpoder2;
+	
 	break;
 	
 	default:
 	printf(" Opção Inválida, certifique-se que escolheu alguma das 6 opções.\n");
 }
 
+printf("Escolha o segundo (Apenas o número da opção escolhida) : \n\n");
+printf("1. População\n");
+printf("2. Área do País\n");
+printf("3. Quantidade de pontos turísticos\n");
+printf("4. Densidade Populacional\n");
+printf("5. PIB Per Capita\n");
+printf("6. Super Poder\n");
+scanf("%d", &opcao2);
+
+
+if (opcao == opcao2) { 
+printf("Você escolheu o mesmo atributo da anterior, tente outro.\n !");
+
+ printf("\nEscolha um novo atributo diferente do primeiro:\n");
+    printf("1. População\n");
+    printf("2. Área do País\n");
+    printf("3. Quantidade de pontos turísticos\n");
+    printf("4. Densidade Populacional\n");
+    printf("5. PIB Per Capita\n");
+    printf("6. Super Poder\n");
+    scanf("%d", &opcao2);
+
+
+} 
+
+switch  (opcao2) {
+
+case 1 : 
+	printf("Opção Escolhida População: \n Carta (%d) Venceu!\n\n", populacao < populacao2);
+	somacarta0 += populacao;
+	somacarta1 += populacao2;
+	
+	break;
+	
+	case 2 :
+	printf("Opção Escolhida: Área da País \n Carta (%d) Venceu!\n\n", area < area2);
+	somacarta0 += area;
+	somacarta1 += area2;
+	
+	break;
+	
+	case 3 :
+	printf("Opção Escolhida Quantidade de Pontos Turísticos : \n Carta (%d) Venceu!\n\n", pts < pts2);
+	somacarta0 += pts;
+	somacarta1 += pts2;
+	
+	break;
+	
+	case 4: 
+	printf("Opção Escolhida : Densidade Populacional \n Carta (%d) Venceu!\n\n", densidadepopulacional > densidadepopulacional2);
+	somacarta0 += densidadepopulacional;
+	somacarta1 += densidadepopulacional2;
+	
+	break;
+	
+	case 5 :
+	printf("Opção Escolhida : PIB Per Capita \n Carta (%d) Venceu!\n\n", Pibpercapita < Pibpercapita2);
+	somacarta0 += Pibpercapita;
+	somacarta1 += Pibpercapita2;
+	
+	break;
+	
+	case 6 :
+	printf("Opção Escolhida : Super Poder\n Carta (%d) Venceu!\n\n", superpoder < superpoder2);
+	somacarta0 += superpoder;
+	somacarta1 += superpoder2;
+	
+	break;
+	
+	default:
+	printf(" Opção Inválida, certifique-se que escolheu alguma das 6 opções.\n");
+}
+
+// Entregando o resultado final, utilizando o somátorio dos valores 
+printf("Resultado final :\n");
+
+if (somacarta0 > somacarta1) {
+    printf("\nA Carta 0\nQue possui como nome %s e área %.2f km²\nVenceu a rodada com uma soma de %.3f!\n",nome, area, somacarta0);
+} else if (somacarta0 < somacarta1) {
+    printf("\nA Carta 1\nQue possui como nome %s e área %.2f km²\nVenceu a rodada com uma soma de %.3f!\n",nome2, area2, somacarta1);
+} else {
+    printf("\nA rodada terminou em empate, ambas as cartas têm a mesma soma: %d.\n", somacarta0);
+}
 
 
 
-printf("Obrigado por participar, este foi o programa, um exemplar apenas com o intuito de coletar dados e reproduzi-los na ordem correta.\n");
+
+
+
+
+printf("\nObrigado por participar deste jogo, para jogar novamente, basta reproduzi-lo de novo!\n");
+
 
 	
 	
